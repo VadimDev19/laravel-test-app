@@ -11,4 +11,14 @@ class Contact extends Model
     
     protected $table = 'contacts';
     protected $guarded  = false;
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+    } 
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'contact_tags', 'contact_id', 'tag_id');
+    }
 }

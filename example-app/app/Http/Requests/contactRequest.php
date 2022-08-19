@@ -27,7 +27,9 @@ class contactRequest extends FormRequest
         'name' => 'required',
         'surname' => 'required',
         'email' => 'required|email',
-        'phone' => 'required'
+        'phone' => 'required',
+        'category_id' => 'string',
+        'tags' => '',
        ];
     }
 

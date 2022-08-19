@@ -20,6 +20,10 @@ return new class extends Migration
             $table->string('surname');
             $table->string('email');
             $table->string('phone');
+
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->index('category_id', 'contacts_category_idx');
+            $table->foreign('category_id', 'contacts_category_fk')->on('categories')->references('id');
             $table->timestamps();
         });
     }
